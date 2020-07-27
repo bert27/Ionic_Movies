@@ -1,13 +1,9 @@
-import { Component } from '@angular/core';
-//import {GetPeliculas } from '../services/get-peliculas.service';
+import { Injectable } from '@angular/core';
 
-
-@Component({
-  selector: 'app-tab1',
-  templateUrl: 'tab1.page.html',
-  styleUrls: ['tab1.page.scss']
+@Injectable({
+  providedIn: 'root'
 })
-export class Tab1Page {
+export class GetPeliculasService {
   private ListaPeliculas=[
   {
     id: "1",
@@ -43,10 +39,22 @@ export class Tab1Page {
 
 
   ];
-//private ListaPeliculas=get_Peliculas;
-
-//constructor(private getPeliculas: GetPeliculas ) {
-constructor() {
+  constructor() {
+/*
+  get_Peliculas(){
+    return [...this.ListaPeliculas]
   }
 
+  get_Pelicula(PeliculaId: string){
+return {
+        ...this.ListaPeliculas.find(place =>{
+            return place.id === PeliculaId
+      })
+      }
+        }
+*/
+
+
+
+}
 }

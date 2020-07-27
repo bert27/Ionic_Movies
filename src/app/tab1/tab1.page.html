@@ -3,10 +3,13 @@
     <ion-title>
         Albert Movies
     </ion-title>
+
+    <ion-searchbar value="Encuentra una película"></ion-searchbar>
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Albert Movies</ion-title>
@@ -16,36 +19,23 @@
   <app-explore-container name="Tab 1 page"></app-explore-container>
 
 
+<ion-list>
+    <ion-item  *ngFor="let place of ListaPeliculas" [routerLink]="['/detalles-pelicula/',place.titulo]">
+      <ion-thumbnail slot="start">
+      <ion-img [src]="place.imageUrl"></ion-img>
+      </ion-thumbnail>
 
-<ion-searchbar value="Encuentra una película"></ion-searchbar>
+          <ion-label>
+            {{place.titulo}}
+          </ion-label>
 
-  <ion-list>
-    <ion-item>
-      <ion-label>
-        Matrix
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        Spiderman 2
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        Avatar
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        Jurassic Park
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label>
-        Inception
-      </ion-label>
-    </ion-item>
+          <ion-label>
+            {{place.comentarios}}
+          </ion-label>
+      </ion-item>
+
   </ion-list>
+
 
 
 

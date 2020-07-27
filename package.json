@@ -1,8 +1,8 @@
 {
   "name": "movies_app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Albert Benavent Cabrera",
+  "homepage": "www.albertbenavent.com",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -52,5 +52,5 @@
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"
   },
-  "description": "An Ionic project"
+  "description": "Peliculas Ionic Angular."
 }
