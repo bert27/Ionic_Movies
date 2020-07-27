@@ -18,27 +18,22 @@
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 
+  <ion-list>
+      <ion-item  *ngFor="let place of ListaPeliculas_Http" [routerLink]="['/detalles-pelicula/',place.titulo]">
+        <ion-thumbnail slot="start">
+        <ion-img [src]="'https://image.tmdb.org/t/p/w500' + place.poster_path"></ion-img>
+        </ion-thumbnail>
 
-<ion-list>
-    <ion-item  *ngFor="let place of ListaPeliculas" [routerLink]="['/detalles-pelicula/',place.titulo]">
-      <ion-thumbnail slot="start">
-      <ion-img [src]="place.imageUrl"></ion-img>
-      </ion-thumbnail>
+              <ion-label>
+                {{place.title}}
+              </ion-label>
 
-          <ion-label>
-            {{place.titulo}}
-          </ion-label>
+              <ion-label>
+                {{place.release_date}}
+              </ion-label>
+        </ion-item>
 
-          <ion-label>
-            {{place.comentarios}}
-          </ion-label>
-      </ion-item>
-
-  </ion-list>
-
-
-
-
+    </ion-list>
 
 
 

@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-//import {GetPeliculas } from '../services/get-peliculas.service';
+import { Router } from '@angular/router';
+import { LoadingController } from '@ionic/angular';
+import { Movie } from '../models/movie';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 
 @Component({
@@ -8,45 +13,30 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-  private ListaPeliculas=[
-  {
-    id: "1",
-    titulo:"Matrix",
-    imageUrl:"https://www.dafont.com/img/flags/es.gif",
-    comentarios:["1","2"],
 
-  },
-  {
-    id: "2",
-    titulo:"Spiderman 2",
-    imageUrl:"https://www.dafont.com/img/flags/es.gif",
-    comentarios:["1","2"],
-  },
-  {
-    id: "3",
-    titulo:"Inception",
-    imageUrl:"https://www.dafont.com/img/flags/es.gif",
-    comentarios:["1","2"],
-  },
-  {
-    id: "4",
-    titulo:"Avatar",
-    imageUrl:"https://www.dafont.com/img/flags/es.gif",
-    comentarios:["1","2"],
-  },
-  {
-    id: "5",
-    titulo:"Jurassic Park",
-    imageUrl:"https://www.dafont.com/img/flags/es.gif",
-    comentarios:["1","2"],
-  },
+  page: number;
+  movies: Movie[];
 
+  constructor(
+  private http: HttpClient,
+  private loadingCtrl: LoadingController) {
+    }
 
-  ];
-//private ListaPeliculas=get_Peliculas;
+  private ListaPeliculas_Http=[];
 
-//constructor(private getPeliculas: GetPeliculas ) {
-constructor() {
+  ngOnInit() {
+    this.page = 1;
+    this.movies = null;
+
+  this.ObtenerPeliculas().subscribe((data)=>{
+    this.ListaPeliculas_Http=data.results;
+    console.log(this.ListaPeliculas_Http);
+    })
+
   }
+
+ObtenerPeliculas(){
+  return this.http.get("https://api.themoviedb.org/3/movie/popular?api_key=fbf5e48d5952c6422d10deb441d0f5c9");
+}
 
 }
