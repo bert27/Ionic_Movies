@@ -1,7 +1,21 @@
 <div id="container">
+
+<div *ngIf="name == 'Pagina1'">
+
+<ion-spinner name="bubbles"></ion-spinner>
+
+</div>
+
+<div *ngIf="name != 'Pagina1'">
+  
   <strong>{{ name }}</strong>
-  <p>Explora
+
+
  <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">
-   Componentes UI</a>
- </p>
+Componentes UI</a>
+
+
+
+</div>
+
 </div>

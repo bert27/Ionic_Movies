@@ -1,0 +1,36 @@
+
+.Titulo{
+  width: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.Titulo1{
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1%;
+  font-size: camel case;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.Imagen_Titulo{
+  width: 30px;
+  height: auto;
+}
+
+.Principal_Descripcion{
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.itemD{
+  display: flex;
+  width: 80%;
+  align-items: baseline;
+  justify-content: space-between;
+}

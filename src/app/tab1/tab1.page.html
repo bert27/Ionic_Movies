@@ -1,36 +1,80 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-        Albert Movies
-    </ion-title>
 
-    <ion-searchbar value="Encuentra una película"></ion-searchbar>
+<ion-header [translucent]="true" align-title=”center”>
 
+<ion-toolbar>
+
+  <div class="Titulo1">
+
+      Albert Movies
+      <div class="Imagen_Titulo">
+      <ion-img [src]="'../../assets/logo_movies.svg'"></ion-img>
+       </div>
+
+  </div>
+
+
+
+</ion-toolbar>
+      <ion-toolbar>
+      <ion-searchbar
+      autocomplete="true"
+      debounce="500"
+      placeholder="Encuentra una película"
+      (ionInput)="onInput($event)"
+      (ionClear)="onClear($event)"
+      ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true" >
+
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Albert Movies</ion-title>
+    <ion-toolbar >
+      <ion-title size="large" >
+        <div class="Titulo">Más Populares</div>
+      </ion-title>
+
     </ion-toolbar>
+
+
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <app-explore-container name="Pagina1" ></app-explore-container>
 
   <ion-list>
-      <ion-item  *ngFor="let place of ListaPeliculas_Http" [routerLink]="['/detalles-pelicula/',place.titulo]">
+      <ion-item  *ngFor="let place of ListaPeliculas_Http" [routerLink]="['/detalles-pelicula/',place.id]"
+(click)="DetallesPelicula(place.title)">
         <ion-thumbnail slot="start">
         <ion-img [src]="'https://image.tmdb.org/t/p/w500' + place.poster_path"></ion-img>
         </ion-thumbnail>
 
+<div class="Principal_Descripcion">
+<div class="itemD">
               <ion-label>
                 {{place.title}}
               </ion-label>
+</div>
+<div class="itemD">
+  <ion-label>
+    {{place.vote_average}}/10
+    <ion-icon name="star" color="primary"></ion-icon>
+  </ion-label>
 
               <ion-label>
                 {{place.release_date}}
               </ion-label>
+
+
+
+</div>
+
+
+
+
+
+
+
+    </div>
         </ion-item>
 
     </ion-list>

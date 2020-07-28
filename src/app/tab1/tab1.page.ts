@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoadingController } from '@ionic/angular';
-import { Movie } from '../models/movie';
-//import { HTTP  } from '@ionic-native/http/ngx';
+
+import { GetDataService  } from '../services/get-data.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry, map, delay} from 'rxjs/operators';
+
+import { LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -17,46 +18,65 @@ import { catchError, retry, map, delay} from 'rxjs/operators';
 export class Tab1Page {
 
   page: number;
-  movies: Movie[];
 
+  InfoPelicula: string;
   constructor(
   private http: HttpClient,
-  private loadingCtrl: LoadingController) {
+  private loadingCtrl: LoadingController,
+  private getData: GetDataService) {
     }
 
   private ListaPeliculas_Http=[];
 
+  onInput(event: any) {
+      let val = event.target.value;
+console.log("Input busqueda" + val);
+this.BuscarPelicula(val);
+  }
 
-
-  ngOnInit() {
-    this.page = 1;
-    this.movies = null;
-
-
-
-
-
-
-  this.ObtenerPeliculas().subscribe((data)=>{
+  onClear(event: any) {
+console.log("Clear busqueda");
+  }
+  DetallesPelicula(titulo: string){
+    console.log("Pelicula seleccionada: " + titulo);
+    this.InfoPelicula=titulo;
+  }
+BuscarPelicula(titulo: string){
+  console.log("Buscando pelicula:" + titulo);
+    let service=this.getData.BuscarPelicula(titulo);
+    service.subscribe((data)=>{
     var resultado=data;
     console.log(resultado);
-  // this.ListaPeliculas_Http=resultado.results;
-  //  console.log(this.ListaPeliculas_Http);
+  //  this.ListaPeliculas_Http=resultado;
+    })
+}
+  ngOnInit() {
+    this.page = 1;
+
+  let service=this.getData.ObtenerPeliculas();
+
+    service.subscribe((data)=>{
+    var resultado=data;
+    console.log(resultado);
+    this.ListaPeliculas_Http=resultado;
+     var size = 0, key;
+    for (key in this.ListaPeliculas_Http) {
+          if (this.ListaPeliculas_Http.hasOwnProperty(key)){
+           size++;
+             let Year=this.ListaPeliculas_Http[key].release_date;
+             Year=Year.slice(0, 4);
+             this.ListaPeliculas_Http[key].release_date=Year;
+         }
+      }
+      console.log("Tamaño: " + size);
+
+
 
     })
 
 
-
-
   }
 
-
-ObtenerPeliculas(){
-  return this.http.get("https://api.themoviedb.org/3/movie/popular?api_key=fbf5e48d5952c6422d10deb441d0f5c9")
-  .pipe(map((res: any) => this.ListaPeliculas_Http=res.results))
-  .pipe(delay(500));
-
-}
 
 
 }

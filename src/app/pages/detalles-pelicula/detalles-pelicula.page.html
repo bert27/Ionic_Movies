@@ -1,9 +1,47 @@
+
+
 <ion-header>
   <ion-toolbar>
-    <ion-title>Detalles_Pelicula</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Pelicula: {{detalles.title}}</ion-title>
+
+
+
+
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
 
+
+
+      <ion-item class="ImagenDetalle">
+
+        <ion-thumbnail slot="start" >
+        <ion-img [src]="'https://image.tmdb.org/t/p/w500' + detalles.poster_path"></ion-img>
+        </ion-thumbnail>
+
+  <ion-label>
+    Titulo:
+      {{detalles.title}}
+  </ion-label>
+
+  <ion-label>
+    Idioma original:
+      {{detalles.original_language}}
+  </ion-label>
+
+  <ion-label>
+    Idioma original:
+      {{detalles.original_language}}
+  </ion-label>
+
+  <ion-label>
+    Idioma original:
+      {{detalles.original_language}}
+  </ion-label>
+
+  </ion-item>
 </ion-content>
