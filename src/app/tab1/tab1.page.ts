@@ -29,16 +29,6 @@ export class Tab1Page {
     this.BuscarPelicula(val);
   }
 
-/*
-onClear(event: any) {
-console.log("Clear busqueda");
-}
-
-DetallesPelicula(titulo: string){
-    console.log("Pelicula seleccionada: " + titulo);
-    this.InfoPelicula=titulo;
-  }
-*/
 
 BuscarPelicula(titulo: string){
   //console.log("Buscando pelicula:" + titulo);

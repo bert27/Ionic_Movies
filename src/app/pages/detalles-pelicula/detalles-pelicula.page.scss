@@ -1,15 +1,12 @@
-.Principal_DescripcionP {
-
-}
 
 .TituloCabecera{
   font-family: camel case;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2%;
 }
 ion-item {
 --background: #fff url("/assets/fondo.png") no-repeat center center / cover;
@@ -24,24 +21,20 @@ ion-content {
   display: flex;
   flex-direction: column;
   font-family: camel case;
- //background: url('/assets/icon/favicon.png') no-repeat 100% 100%;
-background-color: none;
 }
 .ImagenDetalle{
   width: 100%;
   display: flex;
   align-items: center;
-justify-content: center;
+  justify-content: center;
   flex-direction: column;
-//background-color: rgba(71, 92, 153, 0.71);
-color: white;
-font-family: camel case;
-font-size: 30px;
-font-weight: 700;
-padding: 2%;
-border-radius: 6px;
+  color: white;
+  font-family: camel case;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 2%;
+  border-radius: 6px;
 }
-
 .imgd {
   border-radius: 6px;
 }
@@ -61,13 +54,13 @@ border-radius: 6px;
   box-shadow: 0 0 14px black;
 }
 
-
 .Detalle_Texto{
   width: 100%;
   display: flex;
   flex-direction: column;
-align-items: baseline;
+  align-items: baseline;
   justify-content: center;
+  font-size: 19px;
 }
 
 .EncabezadoDetalle{
@@ -82,22 +75,19 @@ align-items: baseline;
   display: flex;
   flex-direction: column;
 }
-.Detalle_Texto_componente{
 
-
-}
 .Detalle_Texto_componente2t{
   text-align: justify;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 32px;
+  padding: 2%;
 }
 .Detalle_Texto_componente2{
   text-align: justify;
   font-size: 19px;
   padding: 2%;
-
 }
 .person{
   width: 90px;
@@ -112,14 +102,38 @@ align-items: baseline;
     background-color: #eee;
 }
 .persons{
-  display: flex;
+display: flex;
 overflow-y: scroll;
-
 }
-
 .Button{
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.Average{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2%;
+}
+.stars {
+font-size: 22px;
+margin-right: 10px;
+  ion-icon {
+    color: #fbcd00;
+    line-height: 0px;
+      }
+    }
+.Detalle_Year{
+  font-size: 23px;
+}
+.Detalle_Texto_componenteg{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }

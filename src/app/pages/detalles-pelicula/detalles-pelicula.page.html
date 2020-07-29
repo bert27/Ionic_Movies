@@ -23,21 +23,9 @@
                       </div>
                 </div>
 
-            <div class="Detalle_Texto">
+<div class="Detalle_Texto">
 
-                      <div class="Detalle_Texto_componente">
-                          {{detalles.release_date}}
-                      </div>
 
-                      <div class="Detalle_Texto_componente">
-                        Idioma original:
-                          {{detalles.original_language}}
-                      </div>
-
-                      <div class="Detalle_Texto_componente">
-                        {{detalles.vote_average}}/10
-                          <ion-icon name="star" color="primary"></ion-icon>
-                      </div>
 
                         <div class="Detalle_Texto_componente">
                         <ion-icon name="time"></ion-icon>
@@ -68,11 +56,39 @@
 
     </div>
 
+
+
+
     <div class="Detalle_Texto2">
           <div class="Detalle_Texto_componente2t">
             {{detalles.title}}
           </div>
+          <div class="Average">
+              <div class="Detalle_Year">
+              {{detalles.release_date}}
+              </div>
 
+              <div class="Detalle_Texto_componenteg">
+                        <div class="stars">
+                            <ion-icon [name]="detalles.vote_average >= 2 ? 'star' : detalles.vote_average >= 1 ? 'star-half' : 'star-outline'" ></ion-icon>
+                            <ion-icon [name]="detalles.vote_average >= 4 ? 'star' : detalles.vote_average >= 3 ? 'star-half' : 'star-outline'" ></ion-icon>
+                              <ion-icon [name]="detalles.vote_average >= 6 ? 'star' : detalles.vote_average >= 5 ? 'star-half' : 'star-outline'" ></ion-icon>
+                                <ion-icon [name]="detalles.vote_average >= 8 ? 'star' : detalles.vote_average >= 7 ? 'star-half' : 'star-outline'" ></ion-icon>
+                            <ion-icon [name]="detalles.vote_average >= 10 ? 'star' : detalles.vote_average >= 9 ? 'star-half' : 'star-outline'" ></ion-icon>
+                          </div>
+
+                          <div class="Detalle_Texto_componentec">
+                            <div>
+                          {{detalles.vote_average}}/10
+                        </div>
+
+                          <div>
+                          {{detalles.vote_count}} votos
+                          </div>
+                            </div>
+              </div>
+
+          </div>
           <div class="Detalle_Texto_componente2">
             {{detalles.overview}}
           </div>

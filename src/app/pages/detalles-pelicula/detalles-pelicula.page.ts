@@ -15,6 +15,7 @@ export class DetallesPeliculaPage implements OnInit {
   private getData: GetDataService
   ) { }
   private detalles=[];
+  private start="start";
   ngOnInit() {
     const movieId = this.activatedRoute.snapshot.params['Id_movie'];
     console.log(movieId);
@@ -25,12 +26,15 @@ export class DetallesPeliculaPage implements OnInit {
       console.table(resultado);
  this.detalles.push(resultado);
  this.detalles=this.detalles[0];
+ this.CutYear(this.detalles);
 console.log(this.detalles);
       })
-  //  this.ObtenDatosPelicula(movieId);
-}
-ObtenDatosPelicula(id: number){
 
+}
+CutYear(Object){
+  let Year=Object.release_date;
+  Year=Year.slice(0, 4);
+  Object.release_date=Year;
 }
 
 }
