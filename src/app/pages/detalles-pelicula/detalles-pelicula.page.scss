@@ -1,3 +1,125 @@
-.ImagenDetalle{
+.Principal_DescripcionP {
+
+}
+
+.TituloCabecera{
+  font-family: camel case;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2%;
+}
+ion-item {
+--background: #fff url("/assets/fondo.png") no-repeat center center / cover;
+}
+
+ion-content {
+  //--background: #fff url("/assets/icon/favicon.png") no-repeat center center / cover;
+}
+
+.Principal_Descripcion{
+  width: 100%;
   display: flex;
+  flex-direction: column;
+  font-family: camel case;
+ //background: url('/assets/icon/favicon.png') no-repeat 100% 100%;
+background-color: none;
+}
+.ImagenDetalle{
+  width: 100%;
+  display: flex;
+  align-items: center;
+justify-content: center;
+  flex-direction: column;
+//background-color: rgba(71, 92, 153, 0.71);
+color: white;
+font-family: camel case;
+font-size: 30px;
+font-weight: 700;
+padding: 2%;
+border-radius: 6px;
+}
+
+.imgd {
+  border-radius: 6px;
+}
+.name{
+  font-family: camel case;
+  color: white;
+  font-size: 14px;
+  line-height: 14px;
+  padding: 4px;
+  font-weight: 600;
+  text-shadow: 0 0 2px black;
+}
+.ImagenDetalle2{
+  width: 120px;
+  display: flex;
+  padding: 2px;
+  box-shadow: 0 0 14px black;
+}
+
+
+.Detalle_Texto{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+align-items: baseline;
+  justify-content: center;
+}
+
+.EncabezadoDetalle{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.Detalle_Texto2{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.Detalle_Texto_componente{
+
+
+}
+.Detalle_Texto_componente2t{
+  text-align: justify;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 32px;
+}
+.Detalle_Texto_componente2{
+  text-align: justify;
+  font-size: 19px;
+  padding: 2%;
+
+}
+.person{
+  width: 90px;
+    height: 130px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 6px;
+    margin: 5px 10px 20px 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    background-color: #eee;
+}
+.persons{
+  display: flex;
+overflow-y: scroll;
+
+}
+
+.Button{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

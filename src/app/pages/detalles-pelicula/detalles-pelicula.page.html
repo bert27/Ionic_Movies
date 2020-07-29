@@ -1,47 +1,110 @@
-
-
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Pelicula: {{detalles.title}}</ion-title>
-
-
-
+    <div class="TituloCabecera">{{detalles.title}}</div>
 
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
 
+<div class="Principal_DescripcionP">
+  <ion-item>
+    <div class="Principal_Descripcion">
+            <div class="EncabezadoDetalle">
+                <div  class="ImagenDetalle">
+                      <div class=ImagenDetalle2>
+          <ion-img
+[src]="'https://image.tmdb.org/t/p/w500' + detalles.poster_path"
+[style]="">
+                            </ion-img>
+                      </div>
+                </div>
+
+            <div class="Detalle_Texto">
+
+                      <div class="Detalle_Texto_componente">
+                          {{detalles.release_date}}
+                      </div>
+
+                      <div class="Detalle_Texto_componente">
+                        Idioma original:
+                          {{detalles.original_language}}
+                      </div>
+
+                      <div class="Detalle_Texto_componente">
+                        {{detalles.vote_average}}/10
+                          <ion-icon name="star" color="primary"></ion-icon>
+                      </div>
+
+                        <div class="Detalle_Texto_componente">
+                        <ion-icon name="time"></ion-icon>
+                        Duración:
+                        {{detalles.runtime}} Mins.
+                      </div>
+
+                        <div class="Detalle_Texto_componente">
+                        <ion-icon name="pricetag"></ion-icon>
+                        Género:
+                      </div>
+
+                      <div class="Detalle_Texto_componente">
+                      <span *ngFor="let genre of detalles.genres; let last = last">
+                        {{ genre.name }}
+                        <span *ngIf="!last">, </span></span>
+                      </div>
+
+                      <div class="Button">
+                        <ion-button color="primary" href={{detalles.homepage}}>
+                          Ver Película
+                        </ion-button>
+
+                      </div>
+      </div >
 
 
-      <ion-item class="ImagenDetalle">
 
-        <ion-thumbnail slot="start" >
-        <ion-img [src]="'https://image.tmdb.org/t/p/w500' + detalles.poster_path"></ion-img>
-        </ion-thumbnail>
+    </div>
 
-  <ion-label>
-    Titulo:
-      {{detalles.title}}
-  </ion-label>
+    <div class="Detalle_Texto2">
+          <div class="Detalle_Texto_componente2t">
+            {{detalles.title}}
+          </div>
 
-  <ion-label>
-    Idioma original:
-      {{detalles.original_language}}
-  </ion-label>
+          <div class="Detalle_Texto_componente2">
+            {{detalles.overview}}
+          </div>
+    </div>
 
-  <ion-label>
-    Idioma original:
-      {{detalles.original_language}}
-  </ion-label>
 
-  <ion-label>
-    Idioma original:
-      {{detalles.original_language}}
-  </ion-label>
+
+    <div class="cast" *ngIf="detalles && detalles.credits && detalles.credits.cast && detalles.credits.cast.length">
+        <div class="label">
+          <ion-icon name="people" color="primary"></ion-icon>
+          Reparto
+        </div>
+
+        <div class="persons">
+          <div *ngFor="let a of detalles.credits.cast; let index = index">
+            <div class="person" *ngIf="index < 15" [style.background-image]="a.profile_path ? 'url(https://image.tmdb.org/t/p/w500' + a.profile_path + ')' : ''" (click)="onPersonDetail(a.id)">
+              <div class="name">{{ a.name }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+</div>
+
 
   </ion-item>
+</div>
+
+
 </ion-content>

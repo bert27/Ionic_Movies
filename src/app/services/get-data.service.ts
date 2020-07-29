@@ -19,7 +19,7 @@ export class GetDataService {
   }
 ObtenerDetallePelicula(id: number){
   console.log("Obteniendo datos de la pelicula con Id: " + id );
-  return this.http.get("https://api.themoviedb.org/3/movie/" + id + "?api_key=fbf5e48d5952c6422d10deb441d0f5c9&language=es-ES")
+  return this.http.get("https://api.themoviedb.org/3/movie/" + id + "?api_key=fbf5e48d5952c6422d10deb441d0f5c9&language=es-ES&append_to_response=credits")
 
 }
 
