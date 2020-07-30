@@ -4,12 +4,10 @@
 <ion-toolbar>
 
   <div class="Titulo1">
-
       Albert Movies
       <div class="Imagen_Titulo">
       <ion-img [src]="'../../assets/logo_movies.svg'"></ion-img>
        </div>
-
   </div>
 
 
@@ -29,58 +27,42 @@
 <ion-content [fullscreen]="true" >
 
   <ion-header collapse="condense">
-    <ion-toolbar >
-      <ion-title size="large" >
-        <div class="Titulo">Más Populares</div>
-      </ion-title>
+            <ion-toolbar >
+              <ion-title size="large" >
+                <div class="Titulo">Más Populares</div>
+              </ion-title>
 
-    </ion-toolbar>
-
-
+            </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Pagina1" ></app-explore-container>
+  <app-Spinner name="Pagina1" ></app-Spinner>
 
   <ion-list>
-      <ion-item  *ngFor="let place of ListaPeliculas_Http" [routerLink]="['/detalles-pelicula/',place.id]"
+      <ion-item  *ngFor="let place of DataMovies" [routerLink]="['/MoviesDetails/',place.id]"
 (click)="DetallesPelicula(place.title)">
         <ion-thumbnail slot="start">
         <ion-img [src]="'https://image.tmdb.org/t/p/w500' + place.poster_path"></ion-img>
         </ion-thumbnail>
 
 <div class="Principal_Descripcion">
-<div class="itemD">
-              <ion-label>
-                {{place.title}}
-              </ion-label>
-</div>
-<div class="itemD">
+          <div class="itemD">
+                        <ion-label>
+                          {{place.title}}
+                        </ion-label>
+          </div>
 
-  <ion-label>
-    {{place.release_date}}
-  </ion-label>
-  <ion-label>
-    {{place.vote_average}}/10
-    <ion-icon name="star" color="primary"></ion-icon>
-  </ion-label>
+          <div class="itemD">
 
+            <ion-label>
+              {{place.release_date}}
+            </ion-label>
+            <ion-label>
+              {{place.vote_average}}/10
+              <ion-icon name="star" color="primary"></ion-icon>
+            </ion-label>
+          </div>
 
-
-
-
-</div>
-
-
-
-
-
-
-
-    </div>
-        </ion-item>
-
-    </ion-list>
-
-
-
+  </div>
+              </ion-item>
+          </ion-list>
 </ion-content>

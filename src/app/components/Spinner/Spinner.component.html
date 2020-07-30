@@ -1,0 +1,13 @@
+<div id="container">
+
+      <div *ngIf="name == 'Movies'">
+      <ion-spinner name="bubbles"></ion-spinner>
+      </div>
+
+      <div *ngIf="name != 'Movies'">
+            <strong>{{ name }}</strong>
+             <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">
+            Componentes UI</a>
+      </div>
+
+</div>

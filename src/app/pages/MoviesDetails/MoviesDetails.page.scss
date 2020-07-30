@@ -109,7 +109,16 @@ overflow-y: scroll;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  padding: 3%;
+
+}
+
+/*MVL*/
+@media (max-width: 480px) {
+  .ButtonText{
+    font-size: 5vw;
+  }
 }
 .Average{
   width: 100%;

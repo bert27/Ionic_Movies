@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { DetallesPeliculaPageRoutingModule } from './detalles-pelicula-routing.module';
+import { DetallesPeliculaPageRoutingModule } from './MoviesDetails-routing.module';
 
-import { DetallesPeliculaPage } from './detalles-pelicula.page';
+import { DetallesPeliculaPage } from './MoviesDetails.page';
 
 @NgModule({
   imports: [
